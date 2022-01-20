@@ -1,0 +1,760 @@
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+    outline: none;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+}
+
+@font-face {
+    font-family: 'Helvetica Nueu LT Pro';
+    font-weight: 300;
+    src: url(HelveticaNeueLTPro-LtEx.otf);
+}
+
+:root{
+    --wht: #fff;
+    --lghblk: #1d1d1d;
+    --blk: #000000;
+    --secbg: #FAFAFA;
+ 
+}
+
+body{
+    
+}
+
+img{
+    max-height: 100%;
+}
+
+video{
+    max-height: 100%;
+    max-width: 100%;
+}
+
+a,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    font-family: 'Helvetica Nueu LT Pro';
+    color: var(--blk);
+    font-size: 500;
+}
+
+p{
+    font-size: 18px;
+}
+
+.container{
+    max-width: 1000px;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+header{
+    height: 50px;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+
+    .header-wrapper{
+        padding: 0 3em;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 50px;
+
+        .title{
+            font-size: 25px;
+            font-weight: 400;
+            color: var(--blk);
+        }
+    }
+}
+
+// smooth scroll
+
+[data-scroll] {
+	will-change: transform;
+}
+
+.content {
+	position: relative;
+	counter-reset: figure; 
+}
+
+#hero{
+    height: auto;
+    padding: 5em 2em;
+
+    .hero-wrapper{
+        padding: 5em 0;
+
+        .sub-title{
+            font-weight: 300;
+            font-size: 20px;
+        }
+
+        .main-title{
+            font-weight: 300;
+            font-size: 5em;
+            // letter-spacing: -5px;
+            width: 80%;
+            line-height: 1.2em;
+            color: var(--blk);
+        }
+    }
+}
+
+
+.card {
+    max-width: 100%;
+    position: relative;
+    // will-change: transform;
+    height: auto;
+
+    .overflow {
+        --aspect-ratio: 1/1.5;
+        overflow: hidden;
+        width: 100%;
+        padding-bottom: calc(100% / (var(--aspect-ratio)));
+        max-width: calc(100% - 0rem);
+        will-change: transform;
+    }
+}
+
+.banner-1,
+.banner-2{
+    height: 90vh;
+}
+
+.image {
+    --overflow: 40px;
+    height: calc(100% + (2 * var(--overflow)));
+    top: calc( -1 * var(--overflow));
+    width: 100%;
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+    will-change: transform;
+}
+
+.card .banner-1,
+.card .banner-2{
+    --aspect-ratio: 50/30;
+}
+
+.first-banner .banner-1 .img--t1{
+    --aspect-ratio: 50/30;
+}
+
+.second-banner .banner-2 .img--t2{
+    --aspect-ratio: 50/30;
+}
+
+.card .overflow .img--t1,
+.card .overflow .img--t2{
+    --overflow: 100px;
+}
+
+
+#about{
+    height: 70vh;
+    width: 100%;
+    padding: 0 2em;
+
+    .about-wrapper{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 60vh;
+
+        .about-title{
+            width: 100%;
+            font-weight: 700;
+            font-size: 20px;
+            color: var(--blk)
+        }
+
+        .about-description{
+            line-height: 1.5em;
+            width: 100%;
+        }
+    }
+}
+
+#second-banner{
+    height: 100vh;
+    width: 100%;
+    background: url('banner2.png') no-repeat;
+    background-size: cover;
+}
+
+video{
+    cursor: url(cursor.png), auto;
+}
+
+#design-process{
+    height: auto;
+    padding: 5em 3em;
+    background: var(--wht);
+
+    .design-process-wrapper{
+        width: 100%;
+
+        .design-process-title{
+            // margin-top: 5em;
+            
+            .design-title{
+                font-weight: 300;
+                font-size: 3em;
+                letter-spacing: -2px;
+                line-height: 1em;
+                color: var(--blk)
+            }
+        }
+
+        .design-process-content{
+            padding: 7em 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            place-items: center;
+            gap: 7em;
+
+            .card-1{
+                background: url('discovery.png')no-repeat center;
+                background-size: cover;
+                cursor: url(cursor.png), auto;
+            }
+            
+            .card-2{
+                background: url('experience-pro.png')no-repeat center;
+                background-size: cover;
+                cursor: url(cursor.png), auto;
+            }
+
+            .card-3{
+                background: url('low-feli.png')no-repeat center;
+                background-size: cover;
+                cursor: url(cursor.png), auto;
+            }
+            
+            .card-4{
+                background: url('high.png')no-repeat center;
+                background-size: cover;
+            }
+
+            .design-process-card{
+                height: 548px;
+                width: 367px;
+                position: relative;
+                padding-bottom: 5em;
+
+                .card-photo{
+                    height: 100%;
+                    width: 100%;
+                    overflow: hidden;
+
+                    img{
+                        transition: transform 500ms;
+                        
+                        &:hover{
+                            transform: scale(1.1);
+                        }
+                    }
+                }
+
+                .card-content{
+                    margin-top: 1em;
+
+                    p{
+                        font-size: 16px;
+                        font-weight: 300;
+                        padding-bottom: 2em;
+                        text-align: center;
+                        line-height: 1.5em;
+            
+                    }
+                }
+
+               .card-btns{
+                    display: flex;
+                    justify-content: center;
+
+                    .card-btn{
+                        color: var(--blk);
+                        position: relative;
+                        font-weight: 600;
+
+                        &::before{
+                            content: '';
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+                            background: var(--blk);
+                            height: 1px;
+                            width: 0px;
+                            transition: all ease-in-out 300ms;
+                        }
+
+                        &:hover::before{
+                            width: 55%;
+                        }
+
+                        &::after{
+                            content: '';
+                            position: absolute;
+                            bottom: 0;
+                            right: 0;
+                            background: var(--blk);
+                            height: 1px;
+                            width: 0px;
+                            transition: all ease-in-out 300ms;
+                        }
+
+                        &:hover::after{
+                            width: 55%;
+                        }
+
+                    }
+                }
+            }
+        }
+
+        .card-stretch{
+            height: 548px;
+            width: 100%;
+            position: relative;
+            padding: 5em 0;
+
+            .card-5{
+                background: url('arts.jpg')no-repeat center;
+                background-size: cover;
+                cursor: url(cursor.png), auto;
+            }
+
+            .card-photo{
+                height: 100%;
+                width: 100%;
+
+                img{
+                    transition: transform 500ms;
+                    
+                    &:hover{
+                        transform: scale(1.1);
+                    }
+                }
+            }
+
+            .card-content{
+                margin-top: 1em;
+
+                p{
+                    font-size: 16px;
+                    font-weight: 300;
+                    padding-bottom: 2em;
+                    text-align: center;
+                    line-height: 1.5em;
+        
+                }
+            }
+
+           .card-btns{
+                display: flex;
+                justify-content: center;
+
+                .card-btn{
+                    color: var(--blk);
+                    position: relative;
+                    font-weight: 600;
+
+                    &::before{
+                        content: '';
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        background: var(--blk);
+                        height: 1px;
+                        width: 0px;
+                        transition: all ease-in-out 300ms;
+                    }
+
+                    &:hover::before{
+                        width: 55%;
+                    }
+
+                    &::after{
+                        content: '';
+                        position: absolute;
+                        bottom: 0;
+                        right: 0;
+                        background: var(--blk);
+                        height: 1px;
+                        width: 0px;
+                        transition: all ease-in-out 300ms;
+                    }
+
+                    &:hover::after{
+                        width: 55%;
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+
+#our-team{
+    background: var(--secbg);
+    height: auto;
+    padding: 5em 3em;
+
+    .our-team-wrapper{
+
+        .our-team-title{
+            padding-top: 1em;
+            
+            h1{
+                font-weight: 200;
+                font-size: 3em;
+                letter-spacing: -2px;
+                line-height: 1em;
+                color: var(--blk)
+            }
+        }
+
+        .our-team-content{
+            padding: 7em 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            place-items: center;
+            gap: 5em;
+
+            .card-photo-1{
+                background: url('randel.png')no-repeat center;
+                background-size: cover;
+            }
+
+            .card-photo-2{
+                background: url('ryan.png')no-repeat center;
+                background-size: cover;
+            }
+
+            .card-photo-3{
+                background: url('rb.png')no-repeat center;
+                background-size: cover;
+            }
+
+            .card-photo-4{
+                background: url('edward.png')no-repeat center;
+                background-size: cover;
+            }
+
+            .card-photo-5{
+                background: url('jam.png')no-repeat center;
+                background-size: cover;
+            }
+
+            .card-photo-6{
+                background: url('acosta.png')no-repeat center;
+                background-size: cover;
+            }
+
+            .card-photo-7{
+                background: url('datu.png')no-repeat center;
+                background-size: cover;
+            }
+
+            .card-photo-8{
+                background: url('glace.png')no-repeat center;
+                background-size: cover;
+            }
+
+            .our-team-card{
+                height: 548px;
+                width: 367px;
+
+                .card-photo{
+                    height: 100%;
+                    width: 100%;
+                    overflow: hidden;
+
+                    img{
+                        transition: transform 500ms;
+                        
+                        &:hover{
+                            transform: scale(1.1);
+                        }
+                    }
+                }
+
+                .card-content{
+                    margin-top: 1em;
+                    display: flex;
+                    justify-content: center;
+
+                    p{
+                        font-size: 16px;
+                        font-weight: 300;
+                        padding-bottom: 1em;
+                        text-align: center;
+                        line-height: 1.5em;
+                        width: 100%;
+                    }
+
+                    .discovery-p{
+                        width: 80%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.footer{
+    padding: 2em 0;
+
+    .footer-wrapper{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .footer-title{
+            font-size: 12px;
+        }
+    }
+}
+
+// queries
+
+@media(max-width: 900px){
+
+    p{
+        font-size: 16px;
+    }
+
+    .container{
+        padding: 0 2em;
+    }
+
+    header{
+
+        .header-wrapper{
+            padding: 0 2em;
+        }
+    }
+
+    #hero{
+
+        .hero-wrapper{
+
+            .sub-title{
+                font-size: 18px;
+            }
+
+            .main-title{
+                font-size: 2.8em;
+                width: 60%;
+            }
+        }
+    }    
+
+    #design-process{
+        padding: 5em 0;
+
+        .design-process-wrapper{
+
+            .design-process-title{
+
+                .design-title{
+                    font-size: 2.5em;
+                }   
+            }
+
+            .design-process-content{
+                padding: 4em;
+
+                .design-process-card{
+                    height: 450px;
+                    width: 100%;
+
+                    .card-content{
+                        
+                        p{
+                            font-size: 16px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    #our-team{
+        padding: 5em 0;
+
+        .our-team-wrapper{
+
+            .our-team-title{
+
+                h1{
+                    font-size: 2.5em;
+                }   
+            }
+
+            .our-team-content{
+                padding: 4em;
+
+                .our-team-card{
+                    height: 450px;
+                    width: 320px;
+
+                    .card-content{
+                        
+                        p{
+                            font-size: 16px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media(max-width: 770px){
+
+    #hero{
+
+        .hero-wrapper{
+
+            .sub-title{
+                font-size: 18px;
+            }
+
+            .main-title{
+                width: 80%;
+            }
+        }
+    }    
+
+  #about{
+        height: 80vh;
+
+        .about-wrapper{
+            flex-direction: column;
+            justify-content: space-around;
+        }
+
+        .about-title{
+            text-align: center;
+        }
+
+        .about-description{
+            width: 100%;
+            text-align: center;
+        }
+    }
+
+    #design-process{
+        padding-bottom: 5em;
+
+        .design-process-wrapper{
+
+            .design-process-title{
+
+                .design-title{
+                    font-size: 2.3em;
+                }   
+            }
+
+            .design-process-content{
+                padding: 4em 0;
+                grid-template-columns: 100%;
+                
+
+                .design-process-card{
+                    height: 700px;
+                    width: 100%;
+
+                    .card-title{
+                        margin-bottom: 0;
+                    }
+
+                    .card-content{
+                        
+                        p{
+                            font-size: 16px;
+                        }
+                    }
+
+                    .card-photo{
+                        height: 100%;
+                        width: 100%;
+                    }
+                }
+
+                .card-2,
+                .card-4{
+                    margin-top: 0;
+                }
+            }
+
+            .card-stretch{
+                padding-bottom: 10em;
+            }
+        }
+    }
+
+    #our-team{
+        padding: 5em 0;
+
+        .our-team-wrapper{
+
+            .our-team-title{
+                
+                h1{
+                    font-size: 2.3em;
+                }
+            }
+
+            .our-team-content{
+                padding: 4em 0;
+                grid-template-columns: 100%;
+
+                .our-team-card{
+                    height: 600px;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 650px){
+    h1{
+        font-size: 2.2em;
+    }
+
+    #hero{
+        padding: 5em 0em;
+
+        .hero-wrapper{
+
+            .main-title{
+                width: 100%;
+                font-size: 2.3em;
+            }
+        }
+    }
+}
